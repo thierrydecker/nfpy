@@ -1,3 +1,3 @@
-# Learning Python
+# NFPy
 
-Ressources for Python course by Thierry DECKER
+A NetFlow project
