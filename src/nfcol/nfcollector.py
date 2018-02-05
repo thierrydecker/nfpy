@@ -27,7 +27,7 @@ def main():
     #
     signal.signal(signal.SIGINT, nfcol_stopper)
 
-    print('NFProbe started')
+    print('NFCollector started')
 
     #
     # Main infinite loop
