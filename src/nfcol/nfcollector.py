@@ -22,8 +22,16 @@ def main():
     """Starts the Netflow collector
 
     """
+    #
+    # Register keyboard interrupt event
+    #
     signal.signal(signal.SIGINT, nfcol_stopper)
+
     print('NFProbe started')
+
+    #
+    # Main infinite loop
+    #
     while True:
         print('NFCollector is running... Press CTRL+C to stop it.')
         time.sleep(1)
