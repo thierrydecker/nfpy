@@ -3,7 +3,6 @@
 
 
 """This is the main module of the Netflow collector
-
 """
 import signal
 import sys
@@ -22,7 +21,6 @@ def nfcol_stopper(signum, stack):
 
 def main():
     """Starts the Netflow collector
-
     """
     #
     # Register keyboard interrupt event
