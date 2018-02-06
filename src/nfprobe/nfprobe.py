@@ -3,7 +3,6 @@
 
 
 """This is the main module of the Netflow probe
-
 """
 import signal
 import sys
@@ -22,7 +21,6 @@ def nfprobe_stopper(signum, stack):
 
 def main():
     """Starts the Netflow probe
-
     """
     #
     # Register keyboard interrupt event
