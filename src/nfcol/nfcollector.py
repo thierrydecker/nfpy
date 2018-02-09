@@ -26,9 +26,7 @@ def main():
     # Register keyboard interrupt event
     #
     signal.signal(signal.SIGINT, nfcol_stopper)
-
     print('NFCollector started')
-
     #
     # Main infinite loop
     #
