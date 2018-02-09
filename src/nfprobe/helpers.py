@@ -7,7 +7,7 @@ import pcap
 """
 
 
-def find_all_interface():
+def get_adapters_names():
     """Finds all interfaces on the system
 
     :return: A list of the interfaces available on the system
