@@ -26,9 +26,7 @@ def main():
     # Register keyboard interrupt event
     #
     signal.signal(signal.SIGINT, nfprobe_stopper)
-
     print('NFProbe started')
-
     #
     # Main infinite loop
     #
