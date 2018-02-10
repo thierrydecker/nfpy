@@ -2,11 +2,11 @@
   "adapters": {
     "eth0": {
       "description": "Ethernet adapter",
-      "timeout_ms": 500
+      "timeout_ms": 100
     },
     "eth1": {
       "description": "Ethernet adapter",
-      "timeout_ms": 500
+      "timeout_ms": 100
     }
   },
   "formatters": {
