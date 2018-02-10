@@ -3,6 +3,7 @@
 
 import pcap
 import json
+import yaml
 
 """This is the helpers module
 """
@@ -16,21 +17,37 @@ def get_adapters_names():
     return pcap.findalldevs()
 
 
-def config_loader(config_name):
+def config_loader_json(config_name):
     """Loads a .json configuration file
 
-    The config name has to be relative to the helpers.py location
+    The config name has to be relative to the helpers.py location.
+    .json suffix must not be provided
 
     :param config_name: The path name of the json configuration file
     :return: A dictionary of the configuration
     """
-    with open(config_name, 'r') as f:
+    with open(config_name + '.json', 'r') as f:
         config_json = f.read()
     return json.loads(config_json)
 
 
+def config_loader_yaml(config_name):
+    """Loads a .yml configuration file
+
+    The config name has to be relative to the helpers.py location
+    .yml suffix must not be provided
+
+    :param config_name: The path name of the yml configuration file
+    :return: A dictionary of the configuration
+    """
+    with open(config_name + '.yml', 'r') as f:
+        config_yml = f.read()
+    return yaml.load(config_yml)
+
+
 def main():
-    pass
+    print(config_loader_json('../nfprobe/config'))
+    print(config_loader_yaml('../nfprobe/config'))
 
 
 if __name__ == '__main__':
