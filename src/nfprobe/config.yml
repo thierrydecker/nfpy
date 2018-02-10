@@ -3,41 +3,42 @@
 #
 
 #
-# Adapters section
+# Adapters configuration
 #
 adapters:
-  #
-  # First adapter
-  #
-  - name: eth0
-    #
-    # Adapter description
-    #
-    description: Ethernet adapter
+  eth0: {
+    description: 'Ethernet adapter',
     timeout_ms: 100
-  #
-  # Second adapter
-  #
-  - name: eth1
-    #
-    # Adapter description
-    #
-    description: Ethernet adapter
+  }
+  eth1: {
+    description: 'Ethernet adapter',
     timeout_ms: 100
+  }
 
 #
-# Logging section
+# Logging formatters configuration
 #
-logging:
-  #
-  # Formatters
-  #
-  formatters:
-  #
-  # Handlers
-  #
-  handlers:
-  #
-  # Loggers
-  #
-  loggers:
+formatters:
+  brief: {
+    format: '%(message)s'
+  }
+  verbose: {
+    format: '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+  }
+
+#
+# Logging handlers configuration
+#
+handlers:
+  console: {
+    class: logging.StreamHandler,
+    formatter: verbose,
+    level: DEBUG
+  }
+
+#
+# Logging loggers configuration
+#
+root:
+  handlers: [console]
+  level: DEBUG
