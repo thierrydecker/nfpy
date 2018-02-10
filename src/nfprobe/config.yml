@@ -1,0 +1,22 @@
+#
+# Adapters section
+#
+adapters:
+  #
+  # First adapter
+  #
+  - name: eth0
+    #
+    # Adapter description
+    #
+    description: Ethernet adapter
+    timeout_ms: 100
+  #
+  # Second adapter
+  #
+  - name: eth1
+    #
+    # Adapter description
+    #
+    description: Ethernet adapter
+    timeout_ms: 100
