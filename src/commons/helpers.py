@@ -44,8 +44,14 @@ def config_loader_yaml(config_name):
 
 
 def main():
-    print(config_loader_json('../nfprobe/config.json'))
-    print(config_loader_yaml('../nfprobe/config.yml'))
+    config = config_loader_json('../nfprobe/config.json')
+    print('json -->', config)
+    for key, value in config.items():
+        print('json -->', key, value)
+    config = config_loader_yaml('../nfprobe/config.yml')
+    print('yaml -->', config)
+    for key, value in config.items():
+        print('yaml -->', key, value)
 
 
 if __name__ == '__main__':
