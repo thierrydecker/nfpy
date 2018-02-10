@@ -24,3 +24,20 @@ adapters:
     #
     description: Ethernet adapter
     timeout_ms: 100
+
+#
+# Logging section
+#
+logging:
+  #
+  # Formatters
+  #
+  formatters:
+  #
+  # Handlers
+  #
+  handlers:
+  #
+  # Loggers
+  #
+  loggers:

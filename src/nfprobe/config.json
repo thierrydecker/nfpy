@@ -10,5 +10,12 @@
       "description": "Ethernet adapter",
       "timeout_ms": 100
     }
+  ],
+  "logging": [
+    {
+      "formatters": [],
+      "handlers": [],
+      "loggers": []
+    }
   ]
 }
