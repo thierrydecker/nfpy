@@ -3,7 +3,6 @@
 
 import pcap
 import json
-import os
 
 """This is the helpers module
 """
