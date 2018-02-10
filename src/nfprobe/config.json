@@ -1,21 +1,33 @@
 {
-  "adapters": [
-    {
-      "name": "eth0",
+  "adapters": {
+    "eth0": {
       "description": "Ethernet adapter",
-      "timeout_ms": 100
+      "timeout_ms": 500
     },
-    {
-      "name": "eth1",
+    "eth1": {
       "description": "Ethernet adapter",
-      "timeout_ms": 100
+      "timeout_ms": 500
     }
-  ],
-  "logging": [
-    {
-      "formatters": [],
-      "handlers": [],
-      "loggers": []
+  },
+  "formatters": {
+    "brief": {
+      "format": "%(message)s"
+    },
+    "verbose": {
+      "format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s"
     }
-  ]
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "formatter": "verbose",
+      "level": "DEBUG"
+    }
+  },
+  "root": {
+    "handlers": [
+      "console"
+    ],
+    "level": "DEBUG"
+  }
 }
