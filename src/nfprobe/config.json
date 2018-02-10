@@ -1,0 +1,12 @@
+{
+  "Interfaces": [
+    {
+      "name": "eth0",
+      "description": "Ethernet adapter"
+    },
+    {
+      "name": "eth1",
+      "description": "Ethernet adapter"
+    }
+  ]
+}
