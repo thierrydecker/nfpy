@@ -1,12 +1,14 @@
 {
-  "Interfaces": [
+  "adapters": [
     {
       "name": "eth0",
-      "description": "Ethernet adapter"
+      "description": "Ethernet adapter",
+      "timeout_ms": 100
     },
     {
       "name": "eth1",
-      "description": "Ethernet adapter"
+      "description": "Ethernet adapter",
+      "timeout_ms": 100
     }
   ]
 }
