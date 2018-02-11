@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Introduction &mdash; nfpy  documentation</title>
+  <title>3. Code &mdash; nfpy  documentation</title>
   
 
   
@@ -36,8 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="nfpy  documentation" href="index.html"/>
-        <link rel="next" title="2. Architecture" href="architecture.html"/>
-        <link rel="prev" title="Welcome to NFPy’s documentation!" href="index.html"/> 
+        <link rel="prev" title="2. Architecture" href="architecture.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -88,9 +87,9 @@
             
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">2. Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">3. Code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Code</a></li>
 </ul>
 
             
@@ -135,13 +134,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>1. Introduction</li>
+      <li>3. Code</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/code.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,9 +153,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="introduction">
-<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>An introduction to the project.</p>
+  <div class="section" id="code">
+<h1>3. Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
+<p>This section documents NFPy’s code.</p>
+<p><strong>helpers</strong></p>
+<span class="target" id="module-helpers"></span><dl class="function">
+<dt id="helpers.config_loader_json">
+<code class="descclassname">helpers.</code><code class="descname">config_loader_json</code><span class="sig-paren">(</span><em>config_name</em><span class="sig-paren">)</span><a class="headerlink" href="#helpers.config_loader_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a .json configuration file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config_name</strong> – The path name of the json configuration file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary of the configuration</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="helpers.config_loader_yaml">
+<code class="descclassname">helpers.</code><code class="descname">config_loader_yaml</code><span class="sig-paren">(</span><em>config_name</em><span class="sig-paren">)</span><a class="headerlink" href="#helpers.config_loader_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a .yml configuration file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config_name</strong> – The path name of the yml configuration file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary of the configuration</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="helpers.get_adapters_names">
+<code class="descclassname">helpers.</code><code class="descname">get_adapters_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#helpers.get_adapters_names" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Finds all adapters on the system</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of the network adapters available on the system</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="helpers.main">
+<code class="descclassname">helpers.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#helpers.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -169,10 +220,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="architecture.html" class="btn btn-neutral float-right" title="2. Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="index.html" class="btn btn-neutral" title="Welcome to NFPy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral" title="2. Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

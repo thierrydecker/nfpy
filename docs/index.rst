@@ -9,12 +9,13 @@ Welcome to NFPy's documentation!
 **A NetFlow project on the go...**
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Table of Contents
    :numbered:
 
    introduction
    architecture
+   code
 
 Indices and tables
 ==================
