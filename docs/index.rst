@@ -13,6 +13,7 @@ Welcome to NFPy's documentation!
    :caption: Table of Contents
    :numbered:
 
+   introduction
    architecture
 
 Indices and tables
