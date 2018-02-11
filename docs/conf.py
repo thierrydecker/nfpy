@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.abspath('../src/commons'))
 sys.path.insert(0, os.path.abspath('../src/nfcol'))
 sys.path.insert(0, os.path.abspath('../src/nfprobe'))
 sys.path.insert(0, os.path.abspath('../src'))
+sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- General configuration ------------------------------------------------
