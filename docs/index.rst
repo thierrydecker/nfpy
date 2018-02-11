@@ -6,7 +6,7 @@
 Welcome to NFPy's documentation!
 ================================
 
-.. centered:: **A NetFlow project**
+**A NetFlow project on the go...**
 
 .. toctree::
    :maxdepth: 2
