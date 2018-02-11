@@ -20,8 +20,6 @@ def get_adapters_names():
 def config_loader_json(config_name):
     """Loads a .json configuration file
 
-    The config name has to be relative to the helpers.py location.
-
     :param config_name: The path name of the json configuration file
     :return: A dictionary of the configuration
     """
@@ -32,8 +30,6 @@ def config_loader_json(config_name):
 
 def config_loader_yaml(config_name):
     """Loads a .yml configuration file
-
-    The config name has to be relative to the helpers.py location
 
     :param config_name: The path name of the yml configuration file
     :return: A dictionary of the configuration
