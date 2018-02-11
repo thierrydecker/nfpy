@@ -1,9 +1,13 @@
 Code
 ====
 
-This section documents NFPy's code.
-
-**helpers**
+.. automodule:: main
+    :members:
+    :undoc-members:
+    :private-members:
+    :special-members:
+    :inherited-members:
+    :show-inheritance:
 
 .. automodule:: helpers
     :members:
