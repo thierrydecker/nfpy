@@ -1,12 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""helpers module
+"""
 
 import json
 import pcap
 import yaml
-
-"""This is the helpers module
-"""
 
 
 def get_adapters_names():
@@ -37,11 +34,3 @@ def config_loader_yaml(config_name):
     with open(config_name, 'r') as f:
         config_yml = f.read()
     return yaml.load(config_yml)
-
-
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()
