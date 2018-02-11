@@ -1,4 +1,4 @@
 Architecture
 ============
 
-This section will describe the architecture of NFPy
+This section will describe the architecture of NFPy.
