@@ -6,6 +6,8 @@
 Welcome to NFPy's documentation!
 ================================
 
+A NetFlow project
+
 .. toctree::
    :maxdepth: 2
    :caption: Table of Contents
