@@ -6,10 +6,14 @@
 """
 
 import argparse
-import src.commons.helpers as helpers
 
 
 def main():
+    """Main function
+
+    This is the entry point of the application
+    :return:
+    """
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
     group.add_argument("-j", "--json", type=str, help="json configuration file name")
