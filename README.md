@@ -11,3 +11,4 @@ NFPy relies on the following packages:
 - Dpkt v1.9.1
 - PyYAML v3.12
 
+Project documentation can be found at [readthedocs.org](http://nfpy.rtfd.io/ "texte pour le titre, facultatif")
