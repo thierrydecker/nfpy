@@ -4,35 +4,18 @@
 
 """This is the main module of the Netflow probe
 """
-import signal
-import sys
-import time
 
-
-def nfprobe_stopper(signum, stack):
-    """Stops the Netflow probe
-
-    :param signum: the signal number received
-    :param stack: the stack when signal was received
-    """
-    print('NFProbe stopped')
-    sys.exit(0)
+import argparse
+import src.commons.helpers as helpers
 
 
 def main():
-    """Starts the Netflow probe
-    """
-    #
-    # Register keyboard interrupt event
-    #
-    signal.signal(signal.SIGINT, nfprobe_stopper)
-    print('NFProbe started')
-    #
-    # Main infinite loop
-    #
-    while True:
-        print('NFProbe is running... Press CTRL+C to stop it.')
-        time.sleep(1)
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("-j", "--json", type=str, help="json configuration file name")
+    group.add_argument("-y", "--yaml", type=str, help="yaml configuration file name")
+    flags = parser.parse_args()
+    print(flags)
 
 
 if __name__ == '__main__':
