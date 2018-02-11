@@ -19,12 +19,23 @@
 #
 import os
 import sys
+from unittest.mock import MagicMock
+
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+
+MOCK_MODULES = ['pcap']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+
 sys.path.insert(0, os.path.abspath('../src/commons'))
 sys.path.insert(0, os.path.abspath('../src/nfcol'))
 sys.path.insert(0, os.path.abspath('../src/nfprobe'))
 sys.path.insert(0, os.path.abspath('../src'))
 sys.path.insert(0, os.path.abspath('.'))
-
 
 # -- General configuration ------------------------------------------------
 
@@ -81,7 +92,6 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -113,12 +123,10 @@ html_sidebars = {
     ]
 }
 
-
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'nfpydoc'
-
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -148,7 +156,6 @@ latex_documents = [
      'Thierry DECKER', 'manual'),
 ]
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
@@ -157,7 +164,6 @@ man_pages = [
     (master_doc, 'nfpy', 'nfpy Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -169,6 +175,3 @@ texinfo_documents = [
      author, 'nfpy', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
