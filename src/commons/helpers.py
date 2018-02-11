@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#import pcap
 import json
+import pcap
 import yaml
 
 """This is the helpers module
