@@ -15,7 +15,6 @@ Welcome to NFPy's documentation!
 
    introduction
    architecture
-   code
 
 Indices and tables
 ==================
