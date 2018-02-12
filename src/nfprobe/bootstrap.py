@@ -26,14 +26,12 @@ def parser_create():
     # Create parser
     #
     parser = argparse.ArgumentParser()
-
     #
     # Either -j/--json or -y/--yaml flag has to be set
     #
     config_group = parser.add_mutually_exclusive_group(required=True)
     config_group.add_argument("-y", "--yaml", type=str, help="yaml configuration file name")
     config_group.add_argument("-j", "--json", type=str, help="json configuration file name")
-
     #
     # Get flags
     #
