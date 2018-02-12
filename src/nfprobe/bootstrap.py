@@ -15,6 +15,8 @@ def main():
         config_data = config_loader_json(flags.json)
     else:
         config_data = config_loader_yaml(flags.yaml)
+    adapters_config = get_adapters_config(config_data)
+    loggers_config = get_loggers_config(config_data)
 
 
 def parser_create():
@@ -36,3 +38,25 @@ def parser_create():
     # Get flags
     #
     return parser.parse_args()
+
+
+def get_adapters_config(config_data):
+    """Extracts adapters configuration from configuration data
+
+    :param config_data: A configuration file data
+    :return: A dictionary of the adapters configuration
+    """
+    adapters = {k: config_data[k] for k in ('adapters',)}
+    adapters = adapters['adapters']
+    return adapters
+
+
+def get_loggers_config(config_data):
+    """Extracts loggers configuration from configuration data
+
+    :param config_data: A configuration file data
+    :return: A dictionary of the loggers configuration
+    """
+    loggers = {k: config_data[k] for k in ('loggers',)}
+    loggers = loggers['loggers']
+    return loggers
