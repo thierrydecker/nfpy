@@ -9,25 +9,27 @@
       "timeout_ms": 100
     }
   },
-  "formatters": {
-    "brief": {
-      "format": "%(message)s"
+  "loggers": {
+    "formatters": {
+      "brief": {
+        "format": "%(message)s"
+      },
+      "verbose": {
+        "format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s"
+      }
     },
-    "verbose": {
-      "format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s"
-    }
-  },
-  "handlers": {
-    "console": {
-      "class": "logging.StreamHandler",
-      "formatter": "verbose",
+    "handlers": {
+      "console": {
+        "class": "logging.StreamHandler",
+        "formatter": "verbose",
+        "level": "DEBUG"
+      }
+    },
+    "root": {
+      "handlers": [
+        "console"
+      ],
       "level": "DEBUG"
     }
-  },
-  "root": {
-    "handlers": [
-      "console"
-    ],
-    "level": "DEBUG"
   }
 }
