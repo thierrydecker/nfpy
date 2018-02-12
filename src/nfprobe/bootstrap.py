@@ -21,7 +21,7 @@ def main():
     logging_worker.start()
 
     fn_name = inspect.stack()[0][3]
-    for i in range(10):
+    for i in range(5):
         log_message(logging_queue, 'DEBUG', __name__, fn_name, 'Message ' + str(i))
         log_message(logging_queue, 'INFO', __name__, fn_name, 'Message ' + str(i))
         log_message(logging_queue, 'WARNING', __name__, fn_name, 'Message ' + str(i))
