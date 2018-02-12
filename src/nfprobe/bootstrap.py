@@ -20,14 +20,16 @@ def main():
     logging_worker = LoggingWorker(loggers_config, logging_queue)
     logging_worker.start()
 
-    fn_name = inspect.stack()[0][3]
+    class_name = ""
+    function_name = inspect.stack()[0][3]
+
     for i in range(5):
-        log_message(logging_queue, 'DEBUG', __name__, fn_name, 'Message ' + str(i))
-        log_message(logging_queue, 'INFO', __name__, fn_name, 'Message ' + str(i))
-        log_message(logging_queue, 'WARNING', __name__, fn_name, 'Message ' + str(i))
-        log_message(logging_queue, 'ERROR', __name__, fn_name, 'Message ' + str(i))
-        log_message(logging_queue, 'CRITICAL', __name__, fn_name, 'Message ' + str(i))
-        log_message(logging_queue, 'Unknown', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'DEBUG', __name__, class_name, function_name, 'Message ' + str(i))
+        log_message(logging_queue, 'INFO', __name__, class_name, function_name, 'Message ' + str(i))
+        log_message(logging_queue, 'WARNING', __name__, class_name, function_name, 'Message ' + str(i))
+        log_message(logging_queue, 'ERROR', __name__, class_name, function_name, 'Message ' + str(i))
+        log_message(logging_queue, 'CRITICAL', __name__, class_name, function_name, 'Message ' + str(i))
+        log_message(logging_queue, 'Unknown', __name__, class_name, function_name, 'Message ' + str(i))
 
     logging_queue.put(None)
     logging_worker.join()
