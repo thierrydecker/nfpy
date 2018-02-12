@@ -26,7 +26,7 @@ def config_loader_yaml(config_name):
     return yaml.load(config_yml)
 
 
-def log_message(queue, level, module, function, message):
+def log_message(queue, level, module_name, class_name, function_name, message):
     """Sends a message to a log worker process
 
     :param queue: A queue to send the message to
@@ -36,4 +36,4 @@ def log_message(queue, level, module, function, message):
     :param message: A string representing the message
     :return:
     """
-    queue.put((level, module, function, message))
+    queue.put((level, module_name, class_name, function_name, message))
