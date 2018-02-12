@@ -2,21 +2,35 @@
 """
 
 import argparse
+import inspect
+import multiprocessing
 
-from ..commons.helpers import config_loader_json
 from ..commons.helpers import config_loader_yaml
+from ..commons.helpers import log_message
+from .workers import LoggingWorker
 
 
 def main():
     """This is the entry point of the application
     """
     flags = parser_create()
-    if flags.json:
-        config_data = config_loader_json(flags.json)
-    else:
-        config_data = config_loader_yaml(flags.yaml)
-    adapters_config = get_adapters_config(config_data)
+    config_data = config_loader_yaml(flags.config_file)
     loggers_config = get_loggers_config(config_data)
+    logging_queue = multiprocessing.Queue()
+    logging_worker = LoggingWorker(loggers_config, logging_queue)
+    logging_worker.start()
+
+    fn_name = inspect.stack()[0][3]
+    for i in range(10):
+        log_message(logging_queue, 'DEBUG', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'INFO', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'WARNING', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'ERROR', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'CRITICAL', __name__, fn_name, 'Message ' + str(i))
+        log_message(logging_queue, 'Unknown', __name__, fn_name, 'Message ' + str(i))
+
+    logging_queue.put(None)
+    logging_worker.join()
 
 
 def parser_create():
@@ -24,19 +38,8 @@ def parser_create():
 
     :return: command line arguments
     """
-    #
-    # Create parser
-    #
     parser = argparse.ArgumentParser()
-    #
-    # Either -j/--json or -y/--yaml flag has to be set
-    #
-    config_group = parser.add_mutually_exclusive_group(required=True)
-    config_group.add_argument("-y", "--yaml", type=str, help="yaml configuration file name")
-    config_group.add_argument("-j", "--json", type=str, help="json configuration file name")
-    #
-    # Get flags
-    #
+    parser.add_argument("-c", "--config-file", type=str, help="yaml configuration file name")
     return parser.parse_args()
 
 
